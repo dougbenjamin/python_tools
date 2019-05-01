@@ -31,6 +31,9 @@ def main():
    earliest_time = datetime.datetime.now()
    latest_time = datetime.datetime(year=2018,month=1,day=1)
    for dir in athenadirs:
+      if not os.path.isdir(dir):
+         continue
+
       logger.info('parsing dir: ' + dir)
       
       jobid_counter += 1
