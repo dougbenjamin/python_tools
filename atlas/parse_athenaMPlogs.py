@@ -53,7 +53,7 @@ def main():
       if not os.path.exists(athenalog):
          logger.error(athenalog + ' does not exist')
          continue
-      if os.path.size(athenalog) == 0 
+      if os.path.getsize(athenalog) == 0 :
          logger.error(athenalog + ' Zero size file')
          continue
      
