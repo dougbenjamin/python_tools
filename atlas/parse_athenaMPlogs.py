@@ -49,10 +49,14 @@ def main():
       data[jobid] = {}
       
       athenalog = glob.glob(os.path.join(dir,options.trf_log))[0]
+      logger.info('parsing athenalog: ' + athenalog)
       if not os.path.exists(athenalog):
          logger.error(athenalog + ' does not exist')
          continue
-
+      if os.path.size(athenalog) == 0 
+         logger.error(athenalog + ' Zero size file')
+         continue
+     
 
       trf_starttime = None 
       start_EVNTtoHITS = datetime.datetime.now()
